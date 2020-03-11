@@ -1,0 +1,103 @@
+body {
+  background-color: #413d3d;
+}
+
+.grid {
+  width: 600px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 10px 50px 50px 50px;
+  border: 2px solid #cbcbcb;
+  vertical-align: center;
+}
+
+.grid h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(120, 1, 255);
+  font-size: 60px;
+  text-align: center;
+  color: #ffffff;
+  padding: 2px 0px;
+}
+
+.navbar-light .navbar-brand {
+  background-color: rgb(120, 1, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 20px;
+  font-size: 24px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #ffffff;
+  width: 300px;
+  text-align: center;
+}
+
+.navbar {
+    padding: 0px 40px;
+    border-bottom: 1px solid rgb(120, 1, 255);
+}
+
+#timer {
+    background-color: rgb(120, 1, 255);
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1.5;
+    width: 300px;
+    padding: 20px 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#score {
+  color: rgb(120, 1, 255);
+  text-align: center;
+  font-size: 30px;
+}
+
+.grid #question {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #1d3c6a;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: none;
+}
+
+#btn0,
+#btn1,
+#btn2,
+#btn3 {
+  background-color: rgb(120, 1, 255);
+  width: 250px;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #1d3c6a;
+  margin: 10px 40px 10px 0px;
+  padding: 10px 10px;
+}
+
+#btn0:hover,
+#btn1:hover,
+#btn2:hover,
+#btn3:hover {
+  cursor: pointer;
+  background-color: rgb(120, 1, 255);
+}
+
+#btn0:focus,
+#btn1:focus,
+#btn2:focus,
+#btn3:focus {
+  outline: 0;
+}
+
+#progress {
+  color: #ffffff;
+  font-size: 20px;
+  display: none;
+}
