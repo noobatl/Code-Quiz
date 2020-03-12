@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./Assets/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">View High Score</a>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" id="timer" href="#">Click Start Below!</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="grid welcome" id="main-section">
+      <section class="container">
+        <h1>Coding Quiz Challenge</h1>
+        <hr style="margin-bottom: 20px" />
+        <div id="question-container">
+          <p id="question">
+            Welcome to the JavaScript Coding Quiz Challenge. You have 30 seconds
+            once you click "START" to complete the Quiz. Each correct answer
+            will be awarded points. Time left over after completion of the Quiz
+            will be awarded points per second left. If you answer a question
+            incorrectly, you will be penalized 10 seconds. Have fun!
+          </p>
+          <div class="button-grid" id="buttons"></div>
+        </div>
+        <div class="controls">
+          <button class="start-btn btn" id="start-btn">START</button>
+        </div>
+        <hr style="margin-top: 50px" />
+        <div id="question-review"></div>
+        <footer>
+          <div id="progress">Question x of y</div>
+        </footer>
+      </section>
+    </main>
+    <script src="./Assets/script.js"></script>
+  </body>
+</html>

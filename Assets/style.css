@@ -1,0 +1,146 @@
+body {
+  background-color: #413d3d;
+}
+
+body.correct {
+  background-color: green;
+}
+
+body.wrong {
+  background-color: red;
+}
+
+.navbar-light .navbar-brand {
+  background-color: rgb(120, 1, 255);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 20px;
+  font-size: 24px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #ffffff;
+  width: 300px;
+  text-align: center;
+}
+
+.navbar {
+  padding: 0px 40px;
+  border-bottom: 1px solid rgb(120, 1, 255);
+}
+
+#timer {
+  background-color: rgb(120, 1, 255);
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.5;
+  width: 300px;
+  padding: 20px 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+#score {
+  color: rgb(120, 1, 255);
+  text-align: center;
+  font-size: 30px;
+}
+
+.grid {
+  width: 600px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 10px 50px 50px 50px;
+  border: 2px solid #cbcbcb;
+  vertical-align: center;
+}
+
+.welcome h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(120, 1, 255);
+  font-size: 60px;
+  text-align: center;
+  color: #ffffff;
+  padding: 2px 0px;
+}
+
+.welcome #question {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #1d3c6a;
+  text-align: justify;
+}
+
+.quiz h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(120, 1, 255);
+  font-size: 60px;
+  text-align: center;
+  color: #ffffff;
+  padding: 2px 0px;
+}
+
+.quiz #question-review {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(120, 1, 255);
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.quiz #question {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #1d3c6a;
+  text-align: center;
+}
+
+#buttons {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.quiz #start-btn {
+  display: none;
+}
+
+#progress {
+  color: #ffffff;
+  font-size: 20px;
+  display: none;
+}
+
+.welcome .button-grid {
+  display: none;
+}
+
+.quiz .button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: rgb(120, 1, 255);
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid green;
+  margin: 10px 40px 10px 0px;
+  padding: 10px 10px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
