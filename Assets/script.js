@@ -1,31 +1,92 @@
-console.log("hello world")
+// build array of objects
+var questions =
+[
+    {
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: [
+            {text: "<script>", correct: true }, 
+            {text: "<javascript>", correct: false },
+            {text: "<js>", correct: false }, 
+            {text: "<style>", correct: false }
+        ]
+    },
+    {
+        question: "How do you write 'Hello World' in an alert box?",
+        answers: [
+            {text: "alertWorld('Hello World')", correct: false }, 
+            {text: "msg('Hello World')", correct: false }, 
+            {text: "alert('Hello World')", correct: true }, 
+            {text: "alertBox('Hello World')", correct: false }
+        ]
+    },
+    {
+        question: "How to write an IF statement in JavaScript?",
+        answers: [
+            {text: "maybeIf (i == 5)", correct: false }, 
+            {text: "if i = 5", correct: false }, 
+            {text: "if (i == 5)", correct: true }, 
+            {text: "if i = 5 then", correct: false }
+        ]
+    },
+    {
+        question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+        answers: [
+            {text: "if (i <> 5)", correct: false }, 
+            {text: "if (i != 5)", correct: true }, 
+            {text: "if i =! 5 then", correct: false }, 
+            {text: "if i <> 5", correct: false }
+        ]
+    },
+    {
+        question: "How does a FOR loop start?",
+        answers: [
+            {text: "for i = 1 to 5", correct: false }, 
+            {text: "for (i <= 5; i++)", correct: true }, 
+            {text: "for (i = 0; i <= 5)", correct: false }, 
+            {text: "for (i = 0; i <= 5; i++)", correct: false }
+        ]
+    }
+]
 
-//build array of objects
 //question and array of answers
 //top right countdown timer - set intervals
-var timeEl = document.getElementById("timer");
+var startQuizEl = document.getElementById("timer");
 
-var secondsLeft = 90;
+var secondsLeft = 60;
 
-timeEl.addEventListener("click", function(event) {
+startQuizEl.addEventListener("click", function(event) {
     event.preventDefault();
     function setTime() {
         var myInterval = setInterval(function(){
             console.log("Every second this should run!");
             secondsLeft--;
-            timeEl.textContent = secondsLeft + " seconds";
+            startQuizEl.textContent = secondsLeft + " seconds";
 
-            if (secondsLeft === 0 ){
+            if (secondsLeft <= 0 ){
             clearInterval(myInterval);
             sendMessage();
             };
         }, 100)
     }
     setTime();
+
+    document.getElementById("main-section").classList.remove("welcome");
+    document.getElementById("main-section").classList.add("quiz");
+
+    // for (i = 0; i < questions.length; i++){
+        // var questions = questions[i].question;
+        document.getElementById("message").innerHTML = questions[i];
+        // var options = questions[i].choices;
+
+    // }
+
+
 });
 
+
+
 function sendMessage() {
-  timeEl.textContent = "TIMES UP!!!";
+  startQuizEl.textContent = "TIMES UP!!!";
 };
 
 
