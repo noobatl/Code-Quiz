@@ -20,40 +20,38 @@
       <ul class="nav justify-content-center">
         <li class="nav-item">
           <a class="nav-link active" id="timer" href="#"
-            >Click here to begin!</a
+            >Click Start Below!</a
           >
         </li>
       </ul>
     </nav>
 
     <main class="grid welcome" id="main-section">
-      <section>
+      <section class="container">
         <h1>Coding Quiz Challenge</h1>
         <hr style="margin-bottom: 20px" />
-
-        <p id="message">
-          Welcome to the JavaScript Coding Quiz Challenge. You will have 60
-          seconds to complete the Quiz. Each correct answer will be awarded 10
-          points. Time left over after completion of the Quiz will be awarded 1
-          point per second left. If you answer a question incorrectly, yout will
-          be penalized 10 seconds. At the end, if you do well enough, you will
-          be added to the highscore list. Have fun!
-        </p>
-
-        <div class="buttons">
-          <button id="btn0"><span id="choice0"></span></button>
-          <button id="btn1"><span id="choice1"></span></button>
-          <button id="btn2"><span id="choice2"></span></button>
-          <button id="btn3"><span id="choice3"></span></button>
+        <div id="question-container">
+          <p id="question">
+            Welcome to the JavaScript Coding Quiz Challenge. You will have 60
+            seconds to complete the Quiz. Each correct answer will be awarded 10
+            points. Time left over after completion of the Quiz will be awarded
+            1 point per second left. If you answer a question incorrectly, yout
+            will be penalized 10 seconds. At the end, if you do well enough, you
+            will be added to the highscore list. Have fun!
+          </p>
+          <div class="button-grid" id="buttons">
+          </div>
         </div>
-
+        <div class="controls">
+          <button class="start-btn btn" id="start-btn">START</button>
+        </div>
         <hr style="margin-top: 50px" />
+        <h2 id="question-review"></h2>
         <footer>
-          <p id="progress">Question x of y</p>
+          <div id="progress">Question x of y</div>
         </footer>
       </section>
     </main>
-
     <script src="./Assets/script.js"></script>
   </body>
 </html>
