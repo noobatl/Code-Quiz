@@ -1,5 +1,6 @@
 //start quiz button
 var startButton = document.getElementById("start-btn");
+var questionReview = document.getElementById("question-review");
 //question container
 var questionContainerEl = document.getElementById("question'container");
 var questionEl = document.getElementById("question");
@@ -7,7 +8,7 @@ var questionEl = document.getElementById("question");
 var answerButtonsEl = document.getElementById("buttons");
 //top right countdown timer
 var timerEl = document.getElementById("timer");
-var secondsLeft = 60;
+var secondsLeft = 30;
 //shuffle questions
 let shuffledQuestions, currentQuestionIndex;
 
@@ -23,7 +24,7 @@ function setTime() {
       clearInterval(myInterval);
       sendMessage();
     }
-  }, 100);
+  }, 1000);
 }
 
 function startQuiz() {
@@ -35,12 +36,18 @@ function startQuiz() {
 }
 
 function setNextQuestion() {
-  //   resetState();
+  resetState();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
+function resetState() {
+  clearStatusClass(document.body);
+  while (answerButtonsEl.firstChild) {
+    answerButtonsEl.removeChild(answerButtonsEl.firstChild);
+  }
+}
+
 function showQuestion(question) {
-  //   btn.classList.add("hide");
   questionEl.innerText = question.question;
   question.answers.forEach(answer => {
     var button = document.createElement("button");
@@ -48,6 +55,11 @@ function showQuestion(question) {
     button.classList.add("btn");
     if (answer.correct) {
       button.dataset.correct = answer.correct;
+    }
+    if (currentQuestionIndex < 0) {
+      var q = document.getElementById("question-review");
+      var w = document.createTextNode("THANK YOU FOR PLAYING!");
+      q.appendChild(w);
     }
     button.addEventListener("click", selectAnswer);
     answerButtonsEl.appendChild(button);
@@ -62,11 +74,13 @@ function selectAnswer(e) {
     setStatusClass(button, button.dataset.correct);
   });
   if (correct) {
-    var q = document.getElementById("question-review")
+    var q = document.getElementById("question-review");
     var w = document.createTextNode("You are Correct!");
     q.appendChild(w);
+    currentQuestionIndex++;
+    setNextQuestion();
   } else {
-    var q = document.getElementById("question-review")
+    var q = document.getElementById("question-review");
     var w = document.createTextNode("You are Wrong!");
     q.appendChild(w);
   }
@@ -90,35 +104,10 @@ function sendMessage() {
   timerEl.textContent = "TIMES UP!!!";
 }
 
-// timerEl.addEventListener("click", function(event) {
+if (questionReview === "") {
+  remove(questionReview);
+}
 
-// });
-
-//
-//Code that did not work
-//
-// // for (i = 0; i < questions.length; i++){
-//     // var questions = questions[i].question;
-//     document.getElementById("message").innerHTML = questions[i];
-//     // var options = questions[i].choices;
-// startButton.classList.add("hide");
-// // }
-// questionContainerEl.classList.remove("hide");
-//use the questions and answers on the gif
-//Unit 04 Web APIs HW Rubric
-//Deployment
-//gotta have a button - start button displays questions
-//countdown timer starts when quiz begins
-//game ends when all questions have been answered or time = 0
-//after game ends, user can save their initials and score to highscore view using local storage
-// function resetState() {
-//   clearStatusClass(document.body);
-// //   nextButton.classList.add("hide");
-//   while (answerButtonsEl.firstChild) {
-//     answerButtonsEl.removeChild(answerButtonsEl.firstChild);
-//   }
-// }
-// build array of objects
 var questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -161,9 +150,9 @@ var questions = [
     question: "How does a FOR loop start?",
     answers: [
       { text: "for i = 1 to 5", correct: false },
-      { text: "for (i <= 5; i++)", correct: true },
+      { text: "for (i <= 5; i++)", correct: false },
       { text: "for (i = 0; i <= 5)", correct: false },
-      { text: "for (i = 0; i <= 5; i++)", correct: false }
+      { text: "for (i = 0; i <= 5; i++)", correct: true }
     ]
   }
 ];

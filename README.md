@@ -1,6 +1,6 @@
 # HW04-Code-Quiz
 
-## User Story
+## Description
 
 ```
 AS A coding bootcamp student
@@ -23,17 +23,6 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 ```
-
-### Pseudocode
-
-```
-1. Build HTML - link bootstrap/css and relative path to js
-2. Edit CSS - Make navbar, body and style
-3. Create Welcome Screen
-4. Create timer
-5. Create begin button
-6. Create 10 questions and answers
-7.
 
 The following animation demonstrates the application functionality:
 
